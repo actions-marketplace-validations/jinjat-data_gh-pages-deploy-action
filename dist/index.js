@@ -1269,11 +1269,6 @@ async function run() {
       return;
     }
 
-    const pkgManager = (await ioUtil.exists('./yarn.lock')) ? 'yarn' : 'npm';
-    console.log(`Installing your site's dependencies using ${pkgManager}.`);
-    await exec.exec(`${pkgManager} install`);
-    console.log('Finished installing dependencies.');
-
     const customDomain = core.getInput('custom-domain');
     if (customDomain) {
       exec.exec(`echo "${customDomain}" >> "./${sourceDirectory}/CNAME"`);
@@ -1281,7 +1276,7 @@ async function run() {
     }
 
     const repo = `${github.context.repo.owner}/${github.context.repo.repo}`;
-    const repoURL = `https://${accessToken}@github.com/${repo}.git`;
+    const repoURL = `git@github.com:${repo}.git`;
     console.log(`Deploying to repo: ${repo} and branch: ${deployBranch}`);
 
     const cwd = `./${sourceDirectory}`;
