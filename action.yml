@@ -1,4 +1,4 @@
-name: 'Github Pages Custom Deploy'
+name: 'Github Pages Deploy Path'
 description: 'Build and deploy a Github Pages site using the build command & output folder you specify.'
 branding:
   icon: 'upload-cloud'
