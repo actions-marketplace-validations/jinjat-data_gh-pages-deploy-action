@@ -1276,7 +1276,7 @@ async function run() {
     }
 
     const repo = `${github.context.repo.owner}/${github.context.repo.repo}`;
-    const repoURL = `git@github.com:${repo}.git`;
+    const repoURL = `https://oauth:${accessToken}@github.com/${repo}.git`;
     console.log(`Deploying to repo: ${repo} and branch: ${deployBranch}`);
 
     const cwd = `./${sourceDirectory}`;
