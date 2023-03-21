@@ -11,10 +11,6 @@ inputs:
     description: 'The subdirectory that your build command outputs your site assets to.'
     required: true
     default: ''
-  build-command:
-    description: 'The build command that should be run to generate your site.'
-    required: true
-    default: ''
   deploy-branch:
     description: 'The branch expected by GitHub to have the static files needed for your site.'
     required: false

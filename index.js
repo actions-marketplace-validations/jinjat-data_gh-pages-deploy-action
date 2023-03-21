@@ -35,18 +35,6 @@ async function run() {
     await exec.exec(`${pkgManager} install`);
     console.log('Finished installing dependencies.');
 
-    const buildCommand = core.getInput('build-command');
-    if (!buildCommand) {
-      core.setFailed(
-        'No build command specified. Please provide one by setting the `build-command` input for this action.',
-      );
-      return;
-    }
-
-    console.log(`Building your site with command: ${buildCommand}`);
-    await exec.exec(buildCommand);
-    console.log('Finished building your site.');
-
     const customDomain = core.getInput('custom-domain');
     if (customDomain) {
       exec.exec(`echo "${customDomain}" >> "./${sourceDirectory}/CNAME"`);
