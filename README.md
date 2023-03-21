@@ -21,10 +21,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: sterlingwes/gh-pages-deploy-action@v1.1
+      - uses: jinjat-data/gh-pages-deploy-action@v1.0
         with:
-          access-token: ${{ secrets.ACCESS_TOKEN }}
+          access-token: ${{ secrets.GITHUB_TOKEN }}
           source-directory: public
 ```
 
